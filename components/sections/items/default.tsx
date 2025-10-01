@@ -1,12 +1,10 @@
 import {
-  BlocksIcon,
-  EclipseIcon,
-  FastForwardIcon,
-  LanguagesIcon,
-  MonitorSmartphoneIcon,
-  RocketIcon,
-  ScanFaceIcon,
-  SquarePenIcon,
+  Zap,
+  Bot,
+  Target,
+  BarChart3,
+  ShieldCheck,
+  Boxes,
 } from "lucide-react";
 import { ReactNode } from "react";
 
@@ -26,50 +24,27 @@ interface ItemsProps {
 }
 
 export default function Items({
-  title = "Everything you need. Nothing you don't.",
+  title = "One Integration, Unlimited Reach",
   items = [
     {
-      title: "Accessibility first",
-      description: "Fully WCAG 2.0 compliant, made with best a11y practices",
-      icon: <ScanFaceIcon className="size-5 stroke-1" />,
+      title: "Effortless Integration",
+      description: "Connect your store in minutes, not months. Our streamlined process makes setup simple, with no deep technical expertise required.",
+      icon: <Boxes className="size-5 stroke-1" />,
     },
     {
-      title: "Responsive design",
-      description: "Looks and works great on any device and screen size",
-      icon: <MonitorSmartphoneIcon className="size-5 stroke-1" />,
+      title: "Unified Management",
+      description: "Control your products, pricing, and inventory across all AI platforms from a single, intuitive dashboard. Say goodbye to fragmented systems.",
+      icon: <Zap className="size-5 stroke-1" />,
     },
     {
-      title: "Light and dark mode",
-      description:
-        "Seamless switching between color schemes, 6 themes included",
-      icon: <EclipseIcon className="size-5 stroke-1" />,
+      title: "Automated Engagement",
+      description: "Leverage AI to enhance customer interactions. Our tools help you provide automated, real-time support and personalized shopping experiences.",
+      icon: <Bot className="size-5 stroke-1" />,
     },
     {
-      title: "Easy to customize",
-      description: "Flexible options to match your product or brand",
-      icon: <BlocksIcon className="size-5 stroke-1" />,
-    },
-    {
-      title: "Top-level performance",
-      description: "Made for lightning-fast load times and smooth interactions",
-      icon: <FastForwardIcon className="size-5 stroke-1" />,
-    },
-    {
-      title: "Production ready",
-      description: "Thoroughly tested and launch-prepared",
-      icon: <RocketIcon className="size-5 stroke-1" />,
-    },
-    {
-      title: "Made for localisation",
-      description:
-        "Easy to implement support for multiple languages and regions",
-      icon: <LanguagesIcon className="size-5 stroke-1" />,
-    },
-    {
-      title: "CMS friendly",
-      description:
-        "Built to work with your any headless content management system",
-      icon: <SquarePenIcon className="size-5 stroke-1" />,
+      title: "Actionable Insights",
+      description: "Gain a clear view of your performance with real-time analytics. Make data-driven decisions to optimize your strategy and boost sales.",
+      icon: <Target className="size-5 stroke-1" />,
     },
   ],
   className,

@@ -30,13 +30,13 @@ interface HeroProps {
 }
 
 export default function Hero({
-  title = "Give your big idea the design it deserves",
-  description = "Professionally designed blocks and templates built with React, Shadcn/ui and Tailwind that will help your product stand out.",
+  title = "Sell on Every AI Platform with One Click",
+  description = "TheAgentCommerce is the universal connector for AI commerce. Integrate once and instantly sell your products on every major AI platform.",
   mockup = (
     <Screenshot
       srcLight="/dashboard-light.png"
-      srcDark="/dashboard-dark.png"
-      alt="Launch UI app screenshot"
+      srcDark="/dashboard-light.png"
+      alt="AgentGraph API Dashboard"
       width={1248}
       height={765}
       className="w-full"
@@ -45,25 +45,19 @@ export default function Hero({
   badge = (
     <Badge variant="outline" className="animate-appear">
       <span className="text-muted-foreground">
-        New version of Launch UI is out!
+      🚀 The AI Commerce Platform
       </span>
-      <a href={siteConfig.getStartedUrl} className="flex items-center gap-1">
-        Get started
+      <a href="#discovery" className="flex items-center">
+        
         <ArrowRightIcon className="size-3" />
       </a>
     </Badge>
   ),
   buttons = [
     {
-      href: siteConfig.getStartedUrl,
-      text: "Get Started",
-      variant: "default",
-    },
-    {
-      href: siteConfig.links.github,
-      text: "Github",
+      href: "#api",
+      text: "Join the Waitlist",
       variant: "glow",
-      icon: <Github className="mr-2 size-4" />,
     },
   ],
   className,

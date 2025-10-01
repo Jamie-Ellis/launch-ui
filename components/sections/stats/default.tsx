@@ -17,26 +17,24 @@ interface StatsProps {
 export default function Stats({
   items = [
     {
-      label: "used by",
-      value: Math.round(siteConfig.stats.figma / 100) / 10,
-      suffix: "k",
-      description: "designers on Figma Community",
+      label: "market opportunity",
+      value: siteConfig.stats.marketSize,
+      description: "TAM by 2025 (AI Commerce)",
     },
     {
-      label: "over",
-      value: siteConfig.stats.github,
-      description: "clones and forks of the template on Github",
+      label: "weekly users",
+      value: siteConfig.stats.chatgptQueries,
+      description: "ChatGPT users shopping every week",
     },
     {
-      label: "already",
-      value: Math.round(siteConfig.stats.cli / 100) / 10,
-      suffix: "k",
-      description: "installations with shadcn/ui CLI",
+      label: "traffic growth",
+      value: siteConfig.stats.cagr,
+      description: "increase in AI shopping traffic (2024-2025)",
     },
     {
-      label: "includes",
-      value: siteConfig.stats.sections,
-      description: "blocks and sections",
+      label: "user satisfaction",
+      value: siteConfig.stats.conversionLift,
+      description: "say AI improves their shopping",
     },
   ],
   className,

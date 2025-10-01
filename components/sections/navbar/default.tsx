@@ -41,23 +41,22 @@ interface NavbarProps {
 
 export default function Navbar({
   logo = <LaunchUI />,
-  name = "Launch UI",
+  name = "AgentCommerce",
   homeUrl = siteConfig.url,
   mobileLinks = [
-    { text: "Getting Started", href: siteConfig.url },
-    { text: "Components", href: siteConfig.url },
-    { text: "Documentation", href: siteConfig.url },
+    { text: "Features", href: "#features" },
+    { text: "Pricing", href: "#pricing" },
+    { text: "FAQ", href: "#faq" },
   ],
   actions = [
-    { text: "Sign in", href: siteConfig.url, isButton: false },
     {
-      text: "Get Started",
-      href: siteConfig.url,
+      text: "Join Waitlist",
+      href: "#waitlist",
       isButton: true,
       variant: "default",
     },
   ],
-  showNavigation = true,
+  showNavigation = false,
   customNavigation,
   className,
 }: NavbarProps) {
