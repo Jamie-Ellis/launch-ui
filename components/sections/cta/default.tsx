@@ -1,4 +1,4 @@
-import { Clock, Award, TrendingUp } from "lucide-react";
+import { Award, Clock, TrendingUp } from "lucide-react";
 import { ReactNode } from "react";
 
 import { siteConfig } from "@/config/site";
@@ -44,12 +44,12 @@ export default function CTA({
   ],
   buttons = [
     {
-      href: "#api",
+      href: siteConfig.getStartedUrl,
       text: "Get Free API Key",
       variant: "default",
     },
     {
-      href: "#docs",
+      href: siteConfig.docsUrl,
       text: "View API Docs",
       variant: "glow",
     },
@@ -94,7 +94,13 @@ export default function CTA({
                 size="lg"
                 asChild
               >
-                <a href={button.href}>
+                <a
+                  href={button.href}
+                  data-attr={`cta-${button.text
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/(^-|-$)/g, "")}`}
+                >
                   {button.icon}
                   {button.text}
                   {button.iconRight}
@@ -108,12 +114,8 @@ export default function CTA({
           <span className="flex items-center gap-1">
             🔒 No credit card required
           </span>
-          <span className="flex items-center gap-1">
-            ⚡ 5-minute setup
-          </span>
-          <span className="flex items-center gap-1">
-            💰 14-day free trial
-          </span>
+          <span className="flex items-center gap-1">⚡ 5-minute setup</span>
+          <span className="flex items-center gap-1">💰 14-day free trial</span>
         </div>
       </div>
       <div className="absolute top-0 left-0 h-full w-full translate-y-[1rem] opacity-80 transition-all duration-500 ease-in-out group-hover:translate-y-[-2rem] group-hover:opacity-100">

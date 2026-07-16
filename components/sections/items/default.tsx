@@ -1,14 +1,7 @@
-import {
-  Zap,
-  Bot,
-  Target,
-  BarChart3,
-  ShieldCheck,
-  Boxes,
-} from "lucide-react";
+import { Bot, Boxes, Target, Zap } from "lucide-react";
 import { ReactNode } from "react";
 
-import { Item, ItemDescription,ItemIcon, ItemTitle } from "../../ui/item";
+import { Item, ItemDescription, ItemIcon, ItemTitle } from "../../ui/item";
 import { Section } from "../../ui/section";
 
 interface ItemProps {
@@ -28,22 +21,26 @@ export default function Items({
   items = [
     {
       title: "Effortless Integration",
-      description: "Connect your store in minutes, not months. Our streamlined process makes setup simple, with no deep technical expertise required.",
+      description:
+        "Connect your store in minutes, not months. Our streamlined process makes setup simple, with no deep technical expertise required.",
       icon: <Boxes className="size-5 stroke-1" />,
     },
     {
       title: "Unified Management",
-      description: "Control your products, pricing, and inventory across all AI platforms from a single, intuitive dashboard. Say goodbye to fragmented systems.",
+      description:
+        "Control your products, pricing, and inventory across all AI platforms from a single, intuitive dashboard. Say goodbye to fragmented systems.",
       icon: <Zap className="size-5 stroke-1" />,
     },
     {
       title: "Automated Engagement",
-      description: "Leverage AI to enhance customer interactions. Our tools help you provide automated, real-time support and personalized shopping experiences.",
+      description:
+        "Leverage AI to enhance customer interactions. Our tools help you provide automated, real-time support and personalized shopping experiences.",
       icon: <Bot className="size-5 stroke-1" />,
     },
     {
       title: "Actionable Insights",
-      description: "Gain a clear view of your performance with real-time analytics. Make data-driven decisions to optimize your strategy and boost sales.",
+      description:
+        "Gain a clear view of your performance with real-time analytics. Make data-driven decisions to optimize your strategy and boost sales.",
       icon: <Target className="size-5 stroke-1" />,
     },
   ],

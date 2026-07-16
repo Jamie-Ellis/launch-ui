@@ -51,7 +51,7 @@ export default function Navbar({
   actions = [
     {
       text: "Join Waitlist",
-      href: "#waitlist",
+      href: siteConfig.getStartedUrl,
       isButton: true,
       variant: "default",
     },
@@ -83,7 +83,7 @@ export default function Navbar({
                   variant={action.variant || "default"}
                   asChild
                 >
-                  <a href={action.href}>
+                  <a href={action.href} data-attr="navbar-cta-join-waitlist">
                     {action.icon}
                     {action.text}
                     {action.iconRight}

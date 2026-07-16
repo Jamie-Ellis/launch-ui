@@ -4,7 +4,6 @@ import { ReactNode } from "react";
 import { siteConfig } from "@/config/site";
 import { cn } from "@/lib/utils";
 
-import Github from "../../logos/github";
 import { Badge } from "../../ui/badge";
 import { Button, type ButtonProps } from "../../ui/button";
 import Glow from "../../ui/glow";
@@ -20,6 +19,13 @@ interface HeroButtonProps {
   iconRight?: ReactNode;
 }
 
+// Stable label used by autocapture analytics so clicks are measurable.
+const slugify = (text: string) =>
+  text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/(^-|-$)/g, "");
+
 interface HeroProps {
   title?: string;
   description?: string;
@@ -33,29 +39,44 @@ export default function Hero({
   title = "Sell on Every AI Platform with One Click",
   description = "TheAgentCommerce is the universal connector for AI commerce. Integrate once and instantly sell your products on every major AI platform.",
   mockup = (
-    <Screenshot
-      srcLight="/dashboard-light.png"
-      srcDark="/dashboard-light.png"
-      alt="AgentGraph API Dashboard"
-      width={1248}
-      height={765}
-      className="w-full"
-    />
+    <a
+      href={siteConfig.getStartedUrl}
+      className="group/preview relative block w-full"
+      aria-label="Open a live product demo"
+      data-attr="hero-preview"
+    >
+      <Screenshot
+        srcLight="/dashboard-light.png"
+        srcDark="/dashboard-light.png"
+        alt="AgentGraph API dashboard preview"
+        width={1248}
+        height={765}
+        className="w-full"
+      />
+      <span className="bg-background/80 text-muted-foreground absolute top-3 right-3 z-10 rounded-full border px-3 py-1 text-xs font-medium backdrop-blur-sm">
+        Product preview
+      </span>
+      <span className="bg-brand/90 text-brand-foreground absolute bottom-3 left-1/2 z-10 flex -translate-x-1/2 items-center gap-1 rounded-full px-4 py-1.5 text-sm font-medium opacity-0 shadow-lg transition-opacity duration-300 group-hover/preview:opacity-100">
+        Try it live
+        <ArrowRightIcon className="size-3" />
+      </span>
+    </a>
   ),
   badge = (
     <Badge variant="outline" className="animate-appear">
-      <span className="text-muted-foreground">
-      🚀 The AI Commerce Platform
-      </span>
-      <a href="#discovery" className="flex items-center">
-        
+      <span className="text-muted-foreground">🚀 The AI Commerce Platform</span>
+      <a
+        href="#how-it-works"
+        className="flex items-center"
+        data-attr="hero-badge-how-it-works"
+      >
         <ArrowRightIcon className="size-3" />
       </a>
     </Badge>
   ),
   buttons = [
     {
-      href: "#api",
+      href: siteConfig.getStartedUrl,
       text: "Join the Waitlist",
       variant: "glow",
     },
@@ -87,7 +108,10 @@ export default function Hero({
                   size="lg"
                   asChild
                 >
-                  <a href={button.href}>
+                  <a
+                    href={button.href}
+                    data-attr={`hero-cta-${slugify(button.text)}`}
+                  >
                     {button.icon}
                     {button.text}
                     {button.iconRight}

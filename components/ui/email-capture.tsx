@@ -48,7 +48,7 @@ export function EmailCapture({
         text: "Thanks! You're on the waitlist. Check your email.",
       });
       setEmail("");
-    } catch (error) {
+    } catch {
       setMessage({
         type: "error",
         text: "Something went wrong. Please try again.",
@@ -71,9 +71,7 @@ export function EmailCapture({
           onChange={(e) => setEmail(e.target.value)}
           required
           disabled={isLoading}
-          className={
-            size === "lg" ? "h-12 text-base" : "h-10"
-          }
+          className={size === "lg" ? "h-12 text-base" : "h-10"}
         />
         <Button
           type="submit"
