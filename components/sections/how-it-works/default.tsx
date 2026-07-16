@@ -1,4 +1,4 @@
-import { Plug, Sparkles, Rocket } from "lucide-react";
+import { Plug, Rocket, Sparkles } from "lucide-react";
 import { ReactNode } from "react";
 
 import { Section } from "../../ui/section";
@@ -67,16 +67,16 @@ export default function HowItWorks({
           {steps.map((step, index) => (
             <div
               key={index}
-              className="group relative flex flex-col items-center gap-4 rounded-lg border bg-card p-8 text-center transition-all hover:border-primary/50 hover:shadow-lg"
+              className="group bg-card hover:border-primary/50 relative flex flex-col items-center gap-4 rounded-lg border p-8 text-center transition-all hover:shadow-lg"
             >
               <div className="from-primary to-primary/60 mb-2 bg-linear-to-r bg-clip-text text-6xl font-bold text-transparent opacity-20 transition-opacity group-hover:opacity-30">
                 {step.number}
               </div>
-              <div className="text-primary flex size-16 items-center justify-center rounded-full border bg-background">
+              <div className="text-primary bg-background flex size-16 items-center justify-center rounded-full border">
                 {step.icon}
               </div>
               <h3 className="text-xl font-semibold">{step.title}</h3>
-              <p className="text-muted-foreground text-sm font-medium leading-relaxed sm:text-base">
+              <p className="text-muted-foreground text-sm leading-relaxed font-medium sm:text-base">
                 {step.description}
               </p>
               {step.time && (

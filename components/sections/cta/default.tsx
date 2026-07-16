@@ -1,4 +1,4 @@
-import { Clock, Award, TrendingUp } from "lucide-react";
+import { Award, Clock, TrendingUp } from "lucide-react";
 import { ReactNode } from "react";
 
 import { siteConfig } from "@/config/site";
@@ -114,12 +114,8 @@ export default function CTA({
           <span className="flex items-center gap-1">
             🔒 No credit card required
           </span>
-          <span className="flex items-center gap-1">
-            ⚡ 5-minute setup
-          </span>
-          <span className="flex items-center gap-1">
-            💰 14-day free trial
-          </span>
+          <span className="flex items-center gap-1">⚡ 5-minute setup</span>
+          <span className="flex items-center gap-1">💰 14-day free trial</span>
         </div>
       </div>
       <div className="absolute top-0 left-0 h-full w-full translate-y-[1rem] opacity-80 transition-all duration-500 ease-in-out group-hover:translate-y-[-2rem] group-hover:opacity-100">
