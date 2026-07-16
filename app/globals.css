@@ -209,6 +209,11 @@
   * {
     @apply border-border;
   }
+  html {
+    scroll-behavior: smooth;
+    /* Offset in-page anchor jumps for the sticky navbar. */
+    scroll-padding-top: 6rem;
+  }
   body {
     @apply bg-background text-foreground;
   }

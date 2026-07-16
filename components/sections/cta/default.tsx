@@ -44,12 +44,12 @@ export default function CTA({
   ],
   buttons = [
     {
-      href: "#api",
+      href: siteConfig.getStartedUrl,
       text: "Get Free API Key",
       variant: "default",
     },
     {
-      href: "#docs",
+      href: siteConfig.docsUrl,
       text: "View API Docs",
       variant: "glow",
     },
@@ -94,7 +94,13 @@ export default function CTA({
                 size="lg"
                 asChild
               >
-                <a href={button.href}>
+                <a
+                  href={button.href}
+                  data-attr={`cta-${button.text
+                    .toLowerCase()
+                    .replace(/[^a-z0-9]+/g, "-")
+                    .replace(/(^-|-$)/g, "")}`}
+                >
                   {button.icon}
                   {button.text}
                   {button.iconRight}

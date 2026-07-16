@@ -50,7 +50,7 @@ export default function HowItWorks({
   className,
 }: HowItWorksProps) {
   return (
-    <Section className={className}>
+    <Section id="how-it-works" className={className}>
       <div className="max-w-container mx-auto flex flex-col items-center gap-12">
         <div className="flex flex-col items-center gap-4 text-center">
           <h2 className="max-w-[680px] text-3xl leading-tight font-semibold sm:text-5xl sm:leading-tight">
